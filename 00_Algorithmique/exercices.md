@@ -136,15 +136,16 @@ Ecrire un algorithme qui demande à l'utilisateur un nombre, et qui calcule la s
 variables 
 entier: A;
 entier: C;
+entier: B;
 
 Début
 ecrire ("valeur de A?")
 lire (A)
 C<-0
-pour variable C de 1 à A par pas de 1 faire 
-    C<-C+1 jusqu'à A
-    ecrire (A);
+pour variable B de 1 à A par pas de 1 faire 
+    C<-C+B
 fin pour
+ecrire ("la somme des entier jusqu'à "A"est"C);
 Fin
 ```
 
@@ -153,7 +154,30 @@ Fin
 Ecrire un algorithme qui demande successivement 5 nombres à l’utilisateur et qui affiche ensuite le plus grand parmi ces nombres.
 
 ```
+variables 
+entier: A;
+entier: B;
+entier: C;
+entier: D;
+entier: E;
 
+Début
+ecrire ("valeur de A?")
+lire (A)
+ecrire ("valeur de B?")
+lire (B)
+ecrire ("valeur de C?")
+lire (C)
+ecrire ("valeur de D?")
+lire (D)
+ecrire ("valeur de E?")
+lire (E)
+
+pour variable B de 1 à A par pas de 1 faire 
+    C<-C+B
+fin pour
+ecrire ("la somme des entier jusqu'à "A"est"C);
+Fin
 ```
 
 ## Exercice 9
