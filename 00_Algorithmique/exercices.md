@@ -173,10 +173,7 @@ lire (D)
 ecrire ("valeur de E?")
 lire (E)
 
-pour variable B de 1 à A par pas de 1 faire 
-    C<-C+B
-fin pour
-ecrire ("la somme des entier jusqu'à "A"est"C);
+
 Fin
 ```
 
@@ -185,7 +182,23 @@ Fin
 Ecrire un algorithme qui déclare un tableau de 5 notes, dont on fait ensuite saisir les valeurs par l’utilisateur (notes comprises entre 0 et 20), après la saisie, affiche la moyenne des notes.
 
 ```
+variables 
+entier: A;
+entier: B;
+tableau[5] de entier:tab;
+Réel: moyenne;
 
+Début
+pour variable B de 0 à 4 par pas de 1 faire
+    FAIRE
+    ecrire("choisir nombre?");
+    lire ("    "tab[B]);
+    TANT QUE (tab[B]<0 ou tab[B]>20);
+    A<-A+tab[B];
+fin pour
+moyenne<-A/5;
+ecrire ("la moyenne est:"moyenne);
+Fin
 ```
 
 ## Exercice 10
@@ -193,7 +206,26 @@ Ecrire un algorithme qui déclare un tableau de 5 notes, dont on fait ensuite sa
 On vous demande régulièrement de modifier l'algorithme de l'exercice précédent pour changer le nombre de notes à saisir. Le modifier pour que cette modification soit réduite à la modification d'une seule valeur.
 
 ```
+variables 
+Constance C: 5;
+entier: A;
+entier: B;
+tableau[C] de entier:tab;
+Réel: moyenne;
 
+Début
+ecrire("choisir nombres de notes"),
+lire(C);
+pour variable B de 0 à C-1 par pas de 1 faire
+    FAIRE
+    ecrire("choisir nombre?");
+    lire ("    "tab[B]);
+    TANT QUE (tab[B]<0 ou tab[B]>20);
+    A<-A+tab[B];
+fin pour
+moyenne<-A/C;
+ecrire ("la moyenne est:"moyenne);
+Fin
 ```
 
 ## Exercice 11
@@ -201,12 +233,47 @@ On vous demande régulièrement de modifier l'algorithme de l'exercice précéde
 Ecrire la fonction ```occurence_max()``` qui renvoie le nombre d’occurrences de la lettre la plus présente dans un tableau de 10 caractères qui lui est passé en paramètre.
 
 ```
+FONCTION occurence_max (tableau [10] de caractères : A) : caractères
+variables 
+entier: S;
+entier: B;
+entier: max;
+
+Début
+S<-0
+max<-0
+pour variable B de 0 à 9 par pas de 1 faire
+    pour variable B de 0 à 9 par pas de 1 faire
+        si(A[B]==A[B] alors
+            S<-S+1;
+        fin si
+   fin pour
+   si (S>max) alors
+    max<-S;
+  fin si
+fin pour
+retour(max);
+Fin
+
+variables 
+entier: i;
+entier: o;
+tableau [10] de caractères :tab
+
+Début
+pour i variant de 0 à 9 faire
+    lire(tab[i]);
+fin pour
+o<_occurence_max (tab);
+ecrire ("une lettre apparait"o"fois");
+Fin
 
 ```
 
 ## Exercice 12
 
 Que fait la fonction ```f``` suivante :
+la fonction f est un tableau de 10 entier 
 
 ```
 FONCTION F (tableau [10] de entier : t) : entier
