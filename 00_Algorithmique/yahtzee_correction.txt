@@ -12,12 +12,17 @@ DEBUT
 	nb_tours <- 1;
 	
 	FAIRE
-	
-		// TO DO gérer les dés sélectionnés 
-		POUR i VARIANT DE 0 A 4 faire
-			tableau_dés[i] <- aleatoire(1, 6);
+		nb_dés_lancés <- 5- nb_dés_séléctionnées;
+		
+	POUR i VARIANT DE 0 A nb_dés_lancés -1 faire
+			tableau_dés_lancés[i] <- aleatoire(1, 6);
 		FIN POUR
-
+		// TO DO gérer les dés sélectionnés 
+		POUR i VARIANT DE 0 A 4-nb_dés_selectionnés -1 faire
+			tableau_dés_lancés[nb_dés_lancés +i] <- tableau_dés_selectionnés[i];
+		FIN POUR
+		
+		fin si
 		ECRIRE("Tirage : " tableau_dés_lancés[0] " " tableau_dés_lancés[1] " " tableau_dés_lancés[2] " " tableau_dés_lancés[3] " " tableau_dés_lancés[4]);
 
 		SI (nb_tours < 3) ALORS
@@ -29,11 +34,9 @@ DEBUT
 					nb_dés_selectionnés <- nb_dés_selectionnés + 1;
 				FIN SI
 			TANT QUE (dé_selectionné <> 0)
-		SINON
-			// TO DO sortir de la boucle
 		FIN SI
 	
-	TANT QUE (nb_dés_selectionnés <> 5)
+	TANT QUE (nb_dés_selectionnés <> 5 et nb_tours< 3)
 	
 FIN
 	
