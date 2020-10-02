@@ -6,13 +6,13 @@ int main() {
     scanf( "%d", &C);
     scanf( "%d", &R);
     if (C==0 || R==0) {
-        printf("Le produit de C et R est nul");
+        printf("Le produit de %d et %d est nul", C, R);
     }
     else if ((C<0 && R>0) || (C>0 && R<0)) {
-        printf("Le produit de C et R est négatif");
+        printf("Le produit de %d et %d est négatif", C, R);
         }
         else {
-        printf("Le produit de C et R est positif");
+        printf("Le produit de %d et %d est positif", C, R);
         }
     return 0;
 
